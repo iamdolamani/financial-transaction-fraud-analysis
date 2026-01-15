@@ -1,11 +1,27 @@
 # Financial Transaction & Fraud Analysis (SQL | PostgreSQL)
 
+## 🎯 Business Problem & Use Case
+Financial transaction data contains critical signals for **revenue growth, customer behavior, and fraud risk**.  
+This project focuses on answering practical business and risk questions using **SQL-first analytics**, similar to how data analysts support **product, marketing, operations, and fraud teams**.
+
+Key questions addressed:
+- Which merchants, cities, and categories drive the most revenue?
+- How do transaction volumes and values change over time?
+- What proportion of transactions are fraudulent?
+- Which segments exhibit the highest fraud risk?
+- How do fraud transactions differ from normal transactions in value?
+
+---
+
 ## 🚀 Project Overview
-This project analyzes financial transaction data to uncover **business insights and fraud patterns** using **SQL (PostgreSQL)**.
+This project analyzes financial transaction data using **SQL (PostgreSQL)** to uncover **business insights and fraud patterns**.
 
-The goal is to demonstrate a **SQL-first analytics approach**, where business logic, aggregations, and insights are handled at the database level before moving to BI tools.
+The core objective is to demonstrate a **database-driven analytics approach**, where:
+- Aggregations and logic are handled in SQL  
+- Metrics are built at the correct aggregation level  
+- Outputs are BI-ready with minimal downstream transformation  
 
-This mirrors how real analytics teams support **product, marketing, operations, and risk** decision-making.
+This mirrors real-world analytics workflows where SQL serves as the foundation for reporting and decision-making.
 
 ---
 
@@ -16,9 +32,9 @@ The dataset represents credit card transactions with attributes such as:
 - Transaction amount  
 - City and city population  
 - Customer demographics (gender, job)  
-- Fraud indicator (0 = non-fraud, 1 = fraud)  
+- Fraud indicator (0 = non-fraud, 1 = fraud)
 
-> Raw data files are intentionally not included to keep the repository clean and privacy-safe.
+> Raw data files are intentionally excluded to keep the repository clean and privacy-safe.
 
 ---
 
@@ -33,7 +49,7 @@ The dataset represents credit card transactions with attributes such as:
 ---
 
 ## 📁 Project Structure
-sql/
+    sql/
 ├── 01_data_health_basics.sql
 ├── 02_time_based_analysis.sql
 ├── 03_merchant_category_analysis.sql
@@ -44,7 +60,8 @@ sql/
 └── 08_kpi_summary.sql
 
 
-Each file represents a logical analytics layer, similar to how SQL scripts are organized in real-world analytics projects.
+
+Each file represents a **logical analytics layer**, similar to how SQL scripts are organized in production analytics environments.
 
 ---
 
@@ -53,14 +70,17 @@ Each file represents a logical analytics layer, similar to how SQL scripts are o
 ### 🔹 Data Health & Core Metrics
 - Total transactions and total revenue
 - Average Transaction Value (AOV)
+- Minimum and maximum transaction values
 - Date range validation
 - Fraud vs non-fraud transaction counts
 
 ### 🔹 Time-Based Analysis
-- Daily and monthly transaction trends
-- Month-on-Month (MoM) growth analysis
+- Daily transaction count and value
+- Monthly transaction trends
+- Month-on-Month (MoM) growth in transaction value
 
 ### 🔹 Merchant & Category Insights
+- Total revenue by merchant
 - Top merchants by transaction value
 - Category-wise transaction volume and revenue
 - Merchant ranking using SQL window functions
@@ -68,25 +88,30 @@ Each file represents a logical analytics layer, similar to how SQL scripts are o
 ### 🔹 Location Analysis
 - City-wise transaction value
 - Top cities by revenue
-- City population vs transaction value (conceptual analysis)
+- City population vs transaction value (conceptual correlation)
 
 ### 🔹 Customer Demographics
-- Transaction behavior by gender
+- Transaction count by gender
+- Average transaction value by gender
 - Profession-wise transaction contribution
+- Top professions by transaction amount
 
-### 🔹 Fraud Analysis (Key Focus)
-- Fraud transaction count and fraud percentage
+### 🔹 Fraud Analysis (Primary Focus)
+- Total fraud transaction count
+- Fraud transaction percentage
 - Fraud vs non-fraud transaction value comparison
 - High-risk categories and cities
 - Average fraud transaction amount vs normal transactions
 
 ---
 
+
 ## 🧠 Key Learnings
-- Importance of correct aggregation levels in analytics
-- Clear distinction between counts, values, and averages
-- Practical use of window functions for ranking problems
-- Why pushing logic into SQL simplifies downstream BI dashboards
+- Correct aggregation levels are critical for accurate insights
+- Clear distinction between **count**, **value**, and **average** metrics
+- Window functions simplify ranking and comparison problems
+- SQL-first analytics reduces complexity in BI dashboards
+- Clean structure improves readability and reusability of analysis
 
 ---
 
